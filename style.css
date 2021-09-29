@@ -280,3 +280,39 @@ body.light .todo-items-info {
 .fa-sun {
   color: #f39c12;
 }
+
+/* ################################## Media Queries ################### */
+
+@media (max-width: 500px) {
+  .checkbox-container {
+    top: 1.5rem;
+    left: 1rem;
+  }
+  .log-out {
+    top: 0.8rem;
+    right: 1rem;
+    font-size: 1.3rem;
+  }
+  .check-mark {
+    display: none;
+  }
+
+  .delete-mark {
+    left: 1rem;
+  }
+  .todo-item {
+    padding-right: 0.5em;
+  }
+
+  .header {
+    margin-top: 1rem;
+  }
+
+  .new-todo .check {
+    display: none;
+  }
+
+  .new-todo-input form {
+    padding-left: 1em;
+  }
+}
