@@ -1,0 +1,282 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  font-family: "Josefin Sans", sans-serif;
+  background-color: hsl(235, 21%, 11%);
+  position: relative;
+  transition: color 2s linear;
+}
+
+body.light {
+  background-color: hsl(0, 0%, 98%);
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 250px;
+  z-index: -1;
+}
+
+.background-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: left;
+}
+
+.container {
+  width: 100%;
+  max-width: 700px;
+  margin: 60px 30px 0px 30px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  color: hsl(0, 0%, 98%);
+  font-size: 50px;
+  font-weight: bold;
+  transition: color 0.25s linear;
+}
+
+.log-out {
+  width: 7rem;
+  height: 3rem;
+  background-color: hsl(235, 24%, 19%);
+  color: hsl(0, 0%, 98%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 9rem;
+  right: 5.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  border-radius: 15px;
+}
+
+.log-out:hover {
+  color: hsl(236, 9%, 61%);
+}
+
+body.light .log-out {
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(235, 24%, 19%);
+}
+
+body.light .log-out:hover {
+  background-color: hsl(234, 11%, 52%);
+}
+
+body.light .title {
+  color: hsl(235, 21%, 11%);
+}
+
+.new-todo {
+  height: 70px;
+  background-color: hsl(235, 24%, 19%);
+  margin-top: 20px;
+  border-radius: 6px;
+  display: flex;
+  transition: color 0.25s linear;
+}
+
+body.light .new-todo {
+  background-color: hsl(236, 33%, 92%);
+}
+
+.check {
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.check-mark {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid hsl(237, 14%, 26%);
+  cursor: pointer;
+  transition: all 0.25s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s linear;
+}
+
+body.light .check-mark {
+  background-color: hsl(237, 14%, 26%);
+}
+
+.check-mark:hover {
+  /* border-color: linear-gradient(135deg, #55ddff 0%, #c058f3 100%); */
+  background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.new-todo-input {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.new-todo-input form {
+  flex-grow: 1;
+}
+
+.new-todo-input input {
+  width: 100%;
+  padding: 10px 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: hsl(234, 39%, 85%);
+  font-size: 18px;
+  transition: color 0.25s linear;
+}
+
+body.light .new-todo-input input {
+  color: hsl(233, 14%, 35%);
+}
+
+.new-todo-input input::placeholder {
+  color: hsl(233, 14%, 35%);
+}
+
+.todo-item {
+  width: 100%;
+  display: flex;
+  height: 70px;
+  background-color: hsl(235, 24%, 19%);
+  border-bottom: 1px hsl(237, 14%, 26%);
+  color: hsl(234, 39%, 85%);
+  font-size: 18px;
+  z-index: 1;
+  cursor: pointer;
+  transition: all 0.25s;
+  position: relative;
+}
+
+.delete-mark {
+  cursor: no-drop;
+  position: absolute;
+  top: 1.5em;
+  right: 2rem;
+}
+
+body.light .todo-item {
+  background-color: hsl(236, 33%, 92%);
+  color: hsl(234, 11%, 52%);
+}
+
+.todo-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0px 7px 0px hsl(235, 21%, 11%);
+  border-color: hsl(235, 24%, 19%);
+  z-index: 10;
+}
+.todo-text {
+  display: flex;
+  align-items: center;
+}
+
+.todo-items-wrapper {
+  margin-top: 30px;
+  background-color: hsl(235, 24%, 19%);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0px 2px 30px 0px rgba(0, 0, 0, 0.4);
+}
+
+.todo-items-info {
+  height: 70px;
+  width: 100%;
+  color: hsl(233, 14%, 35%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+  background-color: hsl(235, 24%, 19%);
+  transition: all 0.25s linear;
+
+  border-radius: 5px;
+}
+
+body.light .todo-items-info {
+  background-color: hsl(236, 33%, 92%);
+  -moz-box-shadow: 0px 3px 8px rgb(100, 100, 100);
+  -webkit-box-shadow: 0px 3px 8px rgb(100, 100, 100);
+  box-shadow: 0px 3px 8px rgb(100, 100, 100);
+}
+
+/* ################################################## Theme Toggler ############################ */
+
+.checkbox-container {
+  position: absolute;
+  top: 3rem;
+  right: 5.5rem;
+}
+
+.checkbox-label {
+  background-color: #111;
+  height: 26px;
+  width: 50px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.ball {
+  background-color: #fff;
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+  transition: 0.4s;
+}
+
+.checkbox:not(:checked) + .checkbox-label .ball {
+  transition: 0.4s;
+}
+
+.fa-moon {
+  color: #f1c405;
+}
+
+.fa-sun {
+  color: #f39c12;
+}

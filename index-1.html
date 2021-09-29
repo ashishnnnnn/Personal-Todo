@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/f8241a6d57.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"
+      integrity="sha512-zYXldzJsDrNKV+odAwFYiDXV2Cy37cwizT+NkuiPGsa9X1dOz04eHvUWVuxaJ299GvcJT31ug2zO4itXBjFx4w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <title>To-Do-App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="background-image">
+      <img src="images/bg-desktop-dark.jpg" />
+    </div>
+    <div class="checkbox-container">
+      <input type="checkbox" class="checkbox" id="checkbox" />
+      <label for="checkbox" class="checkbox-label">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="ball"></div>
+      </label>
+    </div>
+    <div class="log-out">Log-Out</div>
+    <div class="container">
+      <div class="header">
+        <div class="title">Welcome</div>
+      </div>
+      <div class="new-todo">
+        <div class="check">
+          <div class="check-mark"></div>
+        </div>
+        <div class="new-todo-input">
+          <form onsubmit="additem(event)">
+            <input
+              id="to-do-input"
+              type="text"
+              placeholder="Create a new todo"
+            />
+          </form>
+        </div>
+      </div>
+      <div class="todo-items-wrapper"></div>
+      <div class="items-summary">
+        <div class="todo-items-info">
+          <div class="items-left"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const drag_area = document.querySelector(".todo-items-wrapper");
+      new Sortable(drag_area, {
+        animation: 300,
+      });
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="firebase.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
