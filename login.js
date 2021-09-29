@@ -20,7 +20,7 @@ loginForm.addEventListener("submit", (e) => {
 });
 
 demo_login.addEventListener("click", () => {
-  const email = "chhoti@gmail.com";
+  const email = "ashish@gmail.com";
   const password = "123456";
   firebase
     .auth()
