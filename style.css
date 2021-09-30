@@ -164,7 +164,7 @@ body.light .new-todo-input input {
 .todo-item {
   width: 100%;
   display: flex;
-  height: 70px;
+  min-height: 70px;
   background-color: hsl(235, 24%, 19%);
   border-bottom: 1px hsl(237, 14%, 26%);
   color: hsl(234, 39%, 85%);
@@ -172,14 +172,13 @@ body.light .new-todo-input input {
   z-index: 1;
   cursor: pointer;
   transition: all 0.25s;
-  position: relative;
+  align-items: center;
+  padding-right: 1em;
 }
 
 .delete-mark {
   cursor: no-drop;
-  position: absolute;
-  top: 1.5em;
-  right: 2rem;
+  margin-left: auto;
 }
 
 body.light .todo-item {
@@ -196,6 +195,15 @@ body.light .todo-item {
 .todo-text {
   display: flex;
   align-items: center;
+  max-width: 80%;
+  min-height: 70%;
+  text-overflow: initial;
+  overflow-x: scroll;
+  /* height: fit-content; */
+}
+
+.todo-text::-webkit-scrollbar {
+  display: none;
 }
 
 .todo-items-wrapper {
