@@ -46,7 +46,7 @@ function additem(event) {
   //   text.value = "";
   //   todo_wrapper.appendChild(element);
   const value = text.value;
-  if (value.lenght > 0) {
+  if (value.length > 0) {
     let id = (counter += 1);
     text.value = "";
     auth.onAuthStateChanged((user) => {
