@@ -46,26 +46,28 @@ function additem(event) {
   //   text.value = "";
   //   todo_wrapper.appendChild(element);
   const value = text.value;
-  let id = (counter += 1);
-  text.value = "";
-  auth.onAuthStateChanged((user) => {
-    if (user) {
-      db.collection(`${user.uid}`)
-        .doc(`_${id}`)
-        .set({
-          id: "_" + id,
-          task: value,
-        })
-        .then(() => {
-          // console.log("todo added");
-        })
-        .catch((err) => {
-          console.log(err.message);
-        });
-    } else {
-      console.log("user is not signed in to add todos");
-    }
-  });
+  if (value.lenght > 0) {
+    let id = (counter += 1);
+    text.value = "";
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        db.collection(`${user.uid}`)
+          .doc(`_${id}`)
+          .set({
+            id: "_" + id,
+            task: value,
+          })
+          .then(() => {
+            // console.log("todo added");
+          })
+          .catch((err) => {
+            console.log(err.message);
+          });
+      } else {
+        console.log("user is not signed in to add todos");
+      }
+    });
+  }
 }
 
 // ##################################### Rendering #############################
