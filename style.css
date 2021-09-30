@@ -306,6 +306,7 @@ body.light .todo-items-info {
   }
 
   .delete-mark {
+    position:absolute;
     left: 1rem;
   }
   .todo-item {
